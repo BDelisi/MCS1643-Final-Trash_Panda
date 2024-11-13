@@ -23,9 +23,9 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKey(shoot))
             {
-
-                Instantiate(projectile);
-                cooldown = 2;
+                cooldown = 1;
+                Instantiate(projectile, transform.position + transform.rotation * new Vector3(0, .65f, 1f), Quaternion.identity);
+                
             }
         }
     }
