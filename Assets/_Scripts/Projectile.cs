@@ -11,7 +11,6 @@ public class Projectile : MonoBehaviour
     // target game object for when player is aiming at a specific enemy
     private GameObject trackingTarget;
 
-
     // This is called f
     void Update() 
     {
@@ -19,21 +18,20 @@ public class Projectile : MonoBehaviour
         {
             trackingProj();
         }
-
     }
 
     //Method called after projectile instantiated in player class,
-    //determines if whether to fire projectile straight or track onto enemy 
-    public void startProj(GameObject receiver)
+    //fires proj straight 
+    public void straightShot()
     {
-        if (receiver == null)
-        {
-            Rigidbody rb = GetComponent<Rigidbody>();
-            rb.velocity = transform.forward * projectileSpeed;
-        } else
-        {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * projectileSpeed;
+    }
+
+
+    public void setTarget(GameObject receiver)
+    {
             trackingTarget = receiver; 
-        }
     }
 
     //Tells projectile to track to its target and move to that pos
