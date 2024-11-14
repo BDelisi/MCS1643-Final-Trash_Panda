@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Reduces cooldown and then allows the player to shoot if the cooldown is at or below zero
         if (cooldown > 0)
         {
             cooldown -= Time.deltaTime;

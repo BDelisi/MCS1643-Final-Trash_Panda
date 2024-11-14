@@ -8,7 +8,7 @@ public class RatBehavior : MonoBehaviour
     public GameObject target;
     private NavMeshAgent agent;
     private bool attacking;
-    // Start is called before the first frame update
+    
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -18,14 +18,7 @@ public class RatBehavior : MonoBehaviour
    
     void FixedUpdate()
     {
+        //tells the NavMesh to pathfind towards the target
         agent.destination = target.transform.position;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-
-        }
     }
 }

@@ -7,15 +7,15 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
     private GameObject MainCamera;
-    // Start is called before the first frame update
+    
     void Start()
     {
         MainCamera = Camera.main.gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Makes the sprite always face towards the camera
         transform.rotation = Quaternion.LookRotation(MainCamera.transform.position - transform.position);
     }
 }
