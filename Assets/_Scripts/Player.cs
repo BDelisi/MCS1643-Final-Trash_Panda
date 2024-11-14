@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int health = 10;
+
+
+
     public KeyCode shoot;
     public GameObject projectile;
     private float cooldown;
@@ -30,6 +34,11 @@ public class Player : MonoBehaviour
             }
         }
     }
-     
-    
+
+    // Method to be called by projectile that makes the player take damage according to the spell
+    public void loseHealth(int projDamage)
+    {
+        health -= projDamage;
+    }
+
 }

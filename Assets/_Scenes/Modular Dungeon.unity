@@ -1973,6 +1973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell
       objectReference: {fileID: 0}
+    - target: {fileID: 3923604038637717295, guid: c6c14793cba59c641a2fbc3c3a94881b, type: 3}
+      propertyPath: m_TagString
+      value: Spell
+      objectReference: {fileID: 0}
     - target: {fileID: 4940040426542531591, guid: c6c14793cba59c641a2fbc3c3a94881b, type: 3}
       propertyPath: m_Radius
       value: 0.4

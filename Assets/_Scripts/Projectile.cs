@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class Projectile : MonoBehaviour
 {
@@ -42,12 +43,22 @@ public class Projectile : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, trackingTarget.transform.position, projectileSpeed * Time.deltaTime);
     }
 
-    // If the projectile collides with an object,
-    //
-    // else, destroy the projectile
+    // If the projectile collides with an enemy, make the enemy take damage according to the spell's health
+    // then, destroy the projectile
     private void OnCollisionEnter(Collision other)
-    {      
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<EnemyHealth>().loseHealth(damage);
+        } 
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<Player>().loseHealth(damage);
+        }
+ 
+
         Destroy(gameObject);
+
     }
 
 }
