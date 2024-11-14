@@ -42,5 +42,9 @@ public class Projectile : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, trackingTarget.transform.position, projectileSpeed * Time.deltaTime);
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        Destroy(gameObject);
+    }
 
 }
