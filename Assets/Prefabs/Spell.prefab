@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 5045684016911796849}
   - component: {fileID: 4940040426542531591}
   - component: {fileID: 6357154356659013632}
+  - component: {fileID: 5518696290865054973}
   m_Layer: 6
   m_Name: Spell
   m_TagString: Untagged
@@ -260,7 +261,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.4
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6357154356659013632
 MonoBehaviour:
@@ -274,3 +275,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e3bc3036a2f7f498ae8d0a74ddab8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5518696290865054973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3923604038637717295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680549b465df148458dca41037e09746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 3
+  damage: 1
