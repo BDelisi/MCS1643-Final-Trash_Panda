@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class EnemyHealth : MonoBehaviour
     public void loseHealth(int projDamage)
     {
         health -= projDamage;
+        if (health <= 0)
+        {
+            FindObjectOfType<Attacking>().RemoveEnemy(gameObject);
+            Destroy(gameObject);
+        }
     }
 
 
