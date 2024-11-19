@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
 
@@ -14,10 +15,11 @@ public class Projectile : MonoBehaviour
     // target game object for when player is aiming at a specific enemy
     private GameObject trackingTarget;
     private Rigidbody rb;
+    private Vector3 lastPos;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        Rigidbody rb = GetComponent<Rigidbody>();
     }
     // Checks every frame if our receiver gets set to anything other than null
     // Player class calls setTarget when it fires while an enemy is in range
@@ -27,9 +29,14 @@ public class Projectile : MonoBehaviour
         {
             trackingProj();
         }
+        if (rb.velocity.normalized.magnitude == 0)
+        {
+            Vector3 newVector = lastPos - transform.position;
+            GetComponent<Rigidbody>().velocity = newVector * projectileSpeed;
+        }
     }
 
-    //Method called after projectile instantiated in player class,
+    //Method called after projectile instantiated in attacking class,
     //fires proj straight 
     public void straightShot()
     {
@@ -45,8 +52,8 @@ public class Projectile : MonoBehaviour
     //Tells projectile to track to its target and move to that pos
     public void trackingProj()
     {
-        rb.velocity = Vector3.zero;
         transform.position = Vector3.MoveTowards(transform.position, trackingTarget.transform.position, projectileSpeed * Time.deltaTime);
+        lastPos = transform.position;
     }
 
     // If the projectile collides with an enemy, make the enemy take damage according to the spell's health
