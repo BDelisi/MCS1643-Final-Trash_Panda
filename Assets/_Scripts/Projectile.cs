@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
     // Checks every frame if our receiver gets set to anything other than null
     // Player class calls setTarget when it fires while an enemy is in range
@@ -29,10 +29,13 @@ public class Projectile : MonoBehaviour
         {
             trackingProj();
         }
-        if (rb.velocity.normalized.magnitude == 0)
+        if (trackingTarget == null && lastPos != Vector3.zero)
         {
-            Vector3 newVector = lastPos - transform.position;
-            GetComponent<Rigidbody>().velocity = newVector * projectileSpeed;
+            transform.LookAt(lastPos);
+            straightShot();
+            //call straightShot
+
+            //transform.position = Vector3.MoveTowards(transform.position, lastPos, projectileSpeed * Time.deltaTime);
         }
     }
 
@@ -40,20 +43,27 @@ public class Projectile : MonoBehaviour
     //fires proj straight 
     public void straightShot()
     {
-        GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed;
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+        rb.velocity = transform.forward * projectileSpeed;
     }
 
     // Sets the target to the reciever
     public void setTarget(GameObject receiver)
     {
-            trackingTarget = receiver; 
+        trackingTarget = receiver; 
     }
 
     //Tells projectile to track to its target and move to that pos
     public void trackingProj()
     {
         transform.position = Vector3.MoveTowards(transform.position, trackingTarget.transform.position, projectileSpeed * Time.deltaTime);
-        lastPos = transform.position;
+        if (trackingTarget != null)
+        {
+            lastPos = trackingTarget.transform.position;
+        }
     }
 
     // If the projectile collides with an enemy, make the enemy take damage according to the spell's health
