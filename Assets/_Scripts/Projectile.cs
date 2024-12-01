@@ -66,13 +66,13 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    // If the projectile collides with an enemy, make the enemy take damage according to the spell's health
+    // If the projectile collides with an enemy, make the enemy take damage according to the spell's health (and run all enemy hit functions
     // then, destroy the projectile
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyHealth>().loseHealth(damage);
+            other.gameObject.GetComponent<EnemyHealth>().enemyHit(damage);
         } 
         else if (other.gameObject.CompareTag("Player"))
         {
