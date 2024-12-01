@@ -6,16 +6,16 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    private GameObject MainCamera;
+    private GameObject PlayerCamera;
     
     void Start()
     {
-        MainCamera = Camera.main.gameObject;
+        PlayerCamera = GameObject.FindGameObjectWithTag("PlayerCamera");
     }
 
     void Update()
     {
         //Makes the sprite always face towards the camera
-        transform.rotation = Quaternion.LookRotation(MainCamera.transform.position - transform.position);
+        transform.rotation = Quaternion.LookRotation(PlayerCamera.transform.position - transform.position);
     }
 }

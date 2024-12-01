@@ -114,8 +114,8 @@ GameObject:
   - component: {fileID: 2483207885948893046}
   - component: {fileID: 2569754844043578216}
   m_Layer: 7
-  m_Name: MainCamera
-  m_TagString: MainCamera
+  m_Name: Camera
+  m_TagString: PlayerCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
   pushLayers:
     serializedVersion: 2
     m_Bits: 64
-  canPush: 1
+  canPush: 0
   strength: 1.1
 --- !u!114 &6937379089124751083
 MonoBehaviour:

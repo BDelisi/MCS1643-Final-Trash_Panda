@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Spell
   - Enemy
+  - PlayerCamera
   layers:
   - Default
   - TransparentFX
