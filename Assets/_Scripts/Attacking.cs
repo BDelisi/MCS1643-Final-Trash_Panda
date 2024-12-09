@@ -42,7 +42,7 @@ public class Attacking : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject temp = Instantiate(projectile, transform.position + transform.rotation * new Vector3(0,0,1f) + new Vector3(0, .65f, 0f), transform.rotation);
+        GameObject temp = Instantiate(projectile, transform.position + transform.rotation * new Vector3(0,0,1f) + new Vector3(0, .85f, 0f), transform.rotation);
         if (enemiesToShoot.Count == 0)
         {
             temp.GetComponent<Projectile>().straightShot();

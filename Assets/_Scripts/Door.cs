@@ -10,7 +10,6 @@ public class Door : MonoBehaviour
     public float closeDelay = 1f;
     bool isOpen = false;
     bool doorClosing = false;
-    bool opening = false;
 
     GameObject grate;
 

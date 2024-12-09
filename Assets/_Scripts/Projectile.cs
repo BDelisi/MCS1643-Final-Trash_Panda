@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     public float projectileSpeed = 1f;
     public int damage = 1;
     public GameObject particles;
+    public bool isEnemyProj = false;
 
     // target game object for when player is aiming at a specific enemy
     private GameObject trackingTarget;
@@ -33,6 +34,7 @@ public class Projectile : MonoBehaviour
         {
             transform.LookAt(lastPos);
             straightShot();
+            lastPos = Vector3.zero;
             //call straightShot
 
             //transform.position = Vector3.MoveTowards(transform.position, lastPos, projectileSpeed * Time.deltaTime);
@@ -72,7 +74,13 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyHealth>().enemyHit(damage);
+            if(!isEnemyProj)
+            {
+                other.gameObject.GetComponent<EnemyHealth>().enemyHit(damage);
+            } else
+            {
+                return;
+            }
         } 
         else if (other.gameObject.CompareTag("Player"))
         {
