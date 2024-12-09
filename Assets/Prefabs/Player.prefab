@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3417da3a7f163814090108b8b2d903fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoot: 32
+  shoot: 323
   projectile: {fileID: 3923604038637717295, guid: c6c14793cba59c641a2fbc3c3a94881b, type: 3}
   shotCooldown: 0.5
   enemiesToShoot: []
