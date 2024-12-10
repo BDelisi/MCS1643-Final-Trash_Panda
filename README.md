@@ -30,7 +30,10 @@
 
 3. **Any assets used that you didn't create yourself?** <br> (art, music, etc. Just tell us where you got it, link it here)
 
-Robot Crush font https://www.dafont.com/robot-crush.font
+(I don't think we used this font)
+//Robot Crush font https://www.dafont.com/robot-crush.font
+
+Prison Cell Door sound effect.mp3 by endritprenku -- https://freesound.org/s/613498/ -- License: Creative Commons 0
 
 <br>
 

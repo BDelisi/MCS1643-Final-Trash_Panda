@@ -13,6 +13,9 @@ public class Door : MonoBehaviour
 
     GameObject grate;
 
+    public AudioClip doorOpen;
+    public AudioClip doorClose;
+
     //Declares origPos V3 (so it can store origPos)
     Vector3 origPos;
     Vector3 targPos;
@@ -32,12 +35,13 @@ public class Door : MonoBehaviour
         Debug.Log("Trigger works");
         if (other.CompareTag("Player") && isOpen == false)
         {
+            isOpen = true;
+            AudioSource.PlayClipAtPoint(doorOpen, grate.transform.position);
             Debug.Log("Door up");
             while (targPos.y > grate.transform.position.y)
             {
                 grate.transform.position = Vector3.MoveTowards(grate.transform.position, targPos, openSpeed * Time.deltaTime);
             }
-            isOpen = true;
         }
     }
 
@@ -55,6 +59,7 @@ public class Door : MonoBehaviour
     {
         if (doorClosing)
         {
+            AudioSource.PlayClipAtPoint(doorClose, grate.transform.position);
             while (origPos.y < grate.transform.position.y)
             {
                 grate.transform.position = Vector3.MoveTowards(grate.transform.position, origPos, openSpeed * Time.deltaTime);

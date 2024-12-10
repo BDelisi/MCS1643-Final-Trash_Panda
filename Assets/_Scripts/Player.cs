@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    public int health = 10;
+    public int health = 8;
     private float iFrames = 0;
 
     // Update is called once per frame
@@ -28,6 +29,12 @@ public class Player : MonoBehaviour
         {
             health -= projDamage;
             iFrames = .25f;
+        }
+        if (health <= 0 )
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("Death Screen");
         }
     }
 

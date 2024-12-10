@@ -2746,6 +2746,8 @@ MonoBehaviour:
   closeOnExit: 0
   openSpeed: 1
   closeDelay: 1
+  doorOpen: {fileID: 8300000, guid: c432b7933eb668745b723621975dc52c, type: 3}
+  doorClose: {fileID: 8300000, guid: 60ff4783576bb9241aa23db39e34a0f7, type: 3}
 --- !u!65 &4707121871909517579
 BoxCollider:
   m_ObjectHideFlags: 0
