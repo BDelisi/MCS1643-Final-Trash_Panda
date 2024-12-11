@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
 
     //Vars for hit flashes
     public float flashTime = .25f;
+    public AudioSource takeDamage;
+    public AudioSource die;
     SpriteRenderer spriteRenderer;
     Color origColor;
 
@@ -42,8 +44,13 @@ public class EnemyHealth : MonoBehaviour
         health -= projDamage;
         if (health <= 0)
         {
+            die.Play();
+            spriteRenderer.enabled = false;
+            Destroy(gameObject, .25f);
             FindObjectOfType<Attacking>().RemoveEnemy(gameObject);
-            Destroy(gameObject);
+        } else
+        {
+            takeDamage.Play();
         }
     }
 

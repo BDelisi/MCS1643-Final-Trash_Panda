@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public AudioSource[] footsteps;
     public int health = 8;
+    public GameObject healthBar;
     private float iFrames = 0;
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
         {
             health -= projDamage;
             iFrames = .25f;
+            healthBar.GetComponent<HealthBar>().UpdateHealth(health);
         }
         if (health <= 0 )
         {

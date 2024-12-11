@@ -10,59 +10,68 @@
 ---
 
 # Required ReadMe Info for ALL MCS1243 Projects
-* **Project**   - 
-* **Your Name** - 
+* **Trash Panda**   - 
+* **Brycen Delisi and Eli Smith** - 
 * **Date**      - 
 
 <br>
 
 1. **What are the controls to your game? How do we play?**
-
+The controls are wasd to move, shift to sprint, and left click to shoot magic
 
 
 <br>
 
 2. **What creative additions did you make? How can we find them?**
-
+There are many creative additions in this project. From the enemies to the player attacks to the level design.
 
 
 <br>
 
 3. **Any assets used that you didn't create yourself?** <br> (art, music, etc. Just tell us where you got it, link it here)
 
-(I don't think we used this font)
-//Robot Crush font https://www.dafont.com/robot-crush.font
-
+Many of the assets used in this project were from either the unity asset store or OpenGameArt.org
 Prison Cell Door sound effect.mp3 by endritprenku -- https://freesound.org/s/613498/ -- License: Creative Commons 0
+Spoon - assetstore.unity.com/packages/3d/props/food/cutlery-silverware-pbr-106932
+Brick Textures - assetstore.unity.com/publishers/23703
+Win sound - https://opengameart.org/content/won-orchestral-winning-jingle
+Music - https://opengameart.org/content/rat-sewer
+Health bar - https://www.youtube.com/watch?v=BLfNP4Sc_iA
+Pipes - https://assetstore.unity.com/packages/3d/environments/industrial/pipe-constructor-186974
+Candles and boxes - https://assetstore.unity.com/packages/3d/environments/dungeons/simple-modular-dungeon-259641
+rat sounds - https://opengameart.org/content/squeaky-rat
+spells - https://opengameart.org/content/magic-missiles
+bat sounds - https://opengameart.org/content/bat-screeches
+
 
 <br>
 
 4. **Did you receive help from anyone outside this class?** <br> (list their names and what they helped with)
-
+I did not receive help from anyone
 
 
 <br>
 
 5. **Did you get help from any AI Code Assistants?** <br> (Tell us which .cs file to look in for the citation and describe what you learned)
-
+I did not get help from any AI code assistants
 
 
 <br>
 
 6. **Did you get help from any online websites, videos, or tutorials?** <br> (link them here)
-
+https://www.youtube.com/watch?v=BLfNP4Sc_iA
 
 
 <br>
 
 7. **What trouble did you have with this project?**
-
+I had a lot of trouble with the many bugs we have run into
 
 
 <br>
 
 8. **Is there anything else we should know?**
-
+Jerma is hidden in the level
 
 
 

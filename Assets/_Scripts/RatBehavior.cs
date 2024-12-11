@@ -9,6 +9,7 @@ public class RatBehavior : MonoBehaviour
 {
     public GameObject target;
     public int damage = 1;
+    public AudioSource attack;
     private NavMeshAgent agent;
     private float movingCd;
     private GameObject player;
@@ -56,6 +57,7 @@ public class RatBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && movingCd <= 0)
         {
             collision.gameObject.GetComponent<Player>().loseHealth(damage);
+            attack.Play();
             movingCd = .5f;
         }
     }

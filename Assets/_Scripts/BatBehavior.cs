@@ -10,6 +10,7 @@ public class BatBehavior : MonoBehaviour
 {
     public GameObject target;
     public float attackRange = 1f;
+    public AudioSource attack;
     public GameObject projectile;
     private NavMeshAgent agent;
     private float movingCd;
@@ -41,6 +42,7 @@ public class BatBehavior : MonoBehaviour
                         temp.transform.LookAt(player.transform.position + new Vector3(0, .85f, 0));
                         temp.GetComponent<Projectile>().straightShot();
                         movingCd = Random.Range(1f,3f);
+                        attack.Play();
                     }
                 }
                 agent.destination = transform.position;
