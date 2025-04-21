@@ -9,7 +9,7 @@
 
 ---
 
-# Required ReadMe Info for ALL MCS1243 Projects
+# Required ReadMe Info for ALL MCS1243 Project
 * **Trash Panda**   - 
 * **Brycen Delisi and Eli Smith** - 
 * **Date**      - 
